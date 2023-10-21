@@ -1,7 +1,10 @@
-import { Text } from "react-native";
+import { ExpensesOutput } from "../../components";
+import { DUMMY_EXPENSES } from "../../data";
 
 function RecentExpenses() {
-  return <Text>RecentExpenses Screen</Text>;
+  return (
+    <ExpensesOutput expenses={DUMMY_EXPENSES} expensesPeriod="Last 7 days" />
+  );
 }
 
 export { RecentExpenses };
