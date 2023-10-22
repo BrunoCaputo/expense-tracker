@@ -1,5 +1,6 @@
-import { FlatList, ListRenderItemInfo, Text } from "react-native";
+import { FlatList, ListRenderItemInfo } from "react-native";
 import { IExpense } from "../../../../model";
+import { ExpenseItem } from "./components";
 
 interface IExpensesListProps {
   expenses: IExpense[];
@@ -7,7 +8,7 @@ interface IExpensesListProps {
 
 function ExpensesList({ expenses }: IExpensesListProps) {
   function renderExpenseItem({ item }: ListRenderItemInfo<IExpense>) {
-    return <Text>{item.description}</Text>;
+    return <ExpenseItem {...item} />;
   }
 
   return (

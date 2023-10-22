@@ -1,6 +1,7 @@
-import { View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import { ExpensesList, ExpensesSummary } from "./components";
 import { IExpense } from "../../model";
+import { Colors } from "../../styles";
 
 interface IExpensesOutputProps {
   expenses: IExpense[];
@@ -9,7 +10,7 @@ interface IExpensesOutputProps {
 
 function ExpensesOutput({ expenses, expensesPeriod }: IExpensesOutputProps) {
   return (
-    <View>
+    <View style={styles.container}>
       <ExpensesSummary periodName={expensesPeriod} expenses={expenses} />
       <ExpensesList expenses={expenses} />
     </View>
@@ -17,3 +18,13 @@ function ExpensesOutput({ expenses, expensesPeriod }: IExpensesOutputProps) {
 }
 
 export { ExpensesOutput };
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    paddingHorizontal: 24,
+    paddingTop: 24,
+    paddingBottom: 0,
+    backgroundColor: Colors.primary700,
+  },
+});
